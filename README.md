@@ -48,7 +48,7 @@ We report results for four representative binary and continuous phenotypes to il
     <tr>
       <td>Decision Trees</td>
       <td>Fasting Glucose</td>
-      <td>0.23 (R²)</td>
+      <td>0.23</td>
     </tr>
   </tbody>
 </table>
