@@ -46,7 +46,7 @@ We report results for four representative binary and continuous phenotypes to il
       <td>0.76</td>
     </tr>
     <tr>
-      <td>XGBoost</td>
+      <td>Decision Trees</td>
       <td>Fasting Glucose</td>
       <td>0.23 (R²)</td>
     </tr>
