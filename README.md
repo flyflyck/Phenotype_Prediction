@@ -54,12 +54,6 @@ We report results for four representative binary and continuous phenotypes to il
 </table>
 </div>
 
-</table>
-</div>
-<p align="center">
-  <img src="Results/panel_1.jpeg" alt="Results panel 1" width="600"/>
-</p>
-
 ## 📝 Citation
 If you use this work, please cite:
 Meléndez A, López C, Bonet D, Sant G, Marquès F, Rivas M, Mas Montserrat D, Abante J, Ioannidis AG. Assessing Tree-Based Phenotype Prediction on the UK Biobank. In: 2023 IEEE International Conference on Bioinformatics and Biomedicine (BIBM), Istanbul, Turkey; 2023. p. 3804–3810. [doi](10.1109/BIBM58861.2023.10385960).
