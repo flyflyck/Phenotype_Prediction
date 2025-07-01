@@ -2,33 +2,22 @@
 
 ## 🚀 Motivation
 
-The ability to predict human phenotypes from genomic and environmental data has enormous potential for personalized medicine, risk stratification, and healthcare resource allocation. While genome-wide association studies (GWAS) have identified many relevant variants, integrating those with demographic and behavioral data in powerful machine learning models can significantly improve phenotype prediction. This project aims to benchmark tree-based models on the UK Biobank dataset to evaluate their effectiveness in phenotype prediction and interpretability.
+Predicting human phenotypes from genomic and environmental data holds significant promise for personalized medicine, risk stratification, and efficient allocation of healthcare resources. Although genome‐wide association studies (GWAS) have identified numerous relevant genetic variants, integrating these findings with demographic and behavioral data through advanced machine learning approaches can substantially improve prediction accuracy. This project benchmarks a variety of tree-based algorithms on the UK Biobank dataset to assess their predictive performance and interpretability.
 
 ## 📚 Overview
-
-This repository contains code and analysis from our IEEE BIBM 2023 paper:  
-**"A Tree-Based Approach to Phenotype Prediction Using the UK Biobank."**  
-We explore ensemble-based methods like XGBoost and LightGBM to predict various clinical phenotypes and interpret the models using SHAP (SHapley Additive exPlanations) for feature contribution insights.
+This repository accompanies the IEEE BIBM 2023 paper titled “Assessing Tree-Based Phenotype Prediction on the UK Biobank.” We evaluate a suite of ensemble and boosting methods—including XGBoost, LightGBM, CatBoost, AdaBoost, Random Forest, and Extra Trees—alongside decision trees and linear models. Performance is measured using standard metrics (AUC for binary traits, R² for continuous traits), and model interpretability is achieved via SHAP (SHapley Additive exPlanations) to elucidate feature contributions.
 
 ## 🧬 Data
 
-All phenotypic data used in this study come from the **UK Biobank**, a large-scale biomedical database and research resource containing in-depth genetic and health information from over 500,000 UK participants aged 40–69. For phenotype selection and preprocessing, we used the publicly available [Stanford Biobank Engine](https://biobankengine.stanford.edu/), which allows for phenotype exploration and trait lookup.
-
-Access to the UK Biobank data requires application and approval through [https://www.ukbiobank.ac.uk](https://www.ukbiobank.ac.uk).
+All genetic and phenotypic information originates from the UK Biobank, a comprehensive biomedical resource comprising over 500,000 participants aged 40–69 years. We applied for and received access through the UK Biobank application portal. Phenotype selection and data preprocessing were facilitated by the Stanford Biobank Engine, which provides tools for exploring and filtering traits of interest.
 
 ## ⚙️ Methodology
 
-We used tree-based machine learning models, including:
-
-- XGBoost
-- CatBoost
-- LightGBM
-- Decision Trees
-- Random Forest
-
-Each model was trained on genetic, demographic, and lifestyle variables. Evaluation was conducted using standard performance metrics such as AUC (for binary traits) and R² (for continuous traits). SHAP values were used for feature importance interpretation.
+Our predictive framework utilizes nine tree-based algorithms, ranging from simple decision trees to sophisticated gradient-boosting machines. Each model is trained on combined sets of genetic variants, demographic covariates (such as age and sex), and lifestyle factors. A rigorous hyperparameter tuning process, based on multi‐objective optimization and five-fold cross-validation, ensures that each algorithm operates under its optimal parameter configuration. To explore the balance between prediction accuracy and computational efficiency, we employ Random Feature Selection (RFS), varying the number of genetic variants included and observing its impact on both model performance and runtime.
 
 ## 📈 Results
+
+We report results for four representative binary and continuous phenotypes to illustrate key findings. Without hyperparameter tuning, gradient-boosting methods such as LightGBM and HGB outperform linear approaches, while Random Forest excels among tree ensembles for binary outcomes. Hyperparameter optimization further amplifies the performance gap, enabling tree-based models to surpass the performance of sparse linear methods like SNPnet, particularly for continuous traits. Incorporating age and sex as covariates yields additional gains in predictive accuracy, with CatBoost, LightGBM, and HGB emerging as the top performers overall.
 
 <div align="center">
 
@@ -68,11 +57,8 @@ Each model was trained on genetic, demographic, and lifestyle variables. Evaluat
 
 ## 📝 Citation
 If you use this work, please cite:
+Meléndez A, López C, Bonet D, Sant G, Marquès F, Rivas M, Mas Montserrat D, Abante J, Ioannidis AG. Assessing Tree-Based Phenotype Prediction on the UK Biobank. In: 2023 IEEE International Conference on Bioinformatics and Biomedicine (BIBM), Istanbul, Turkey; 2023. p. 3804–3810. [doi](10.1109/BIBM58861.2023.10385960).
 
-A. Meléndez et al., "Assessing Tree-Based Phenotype Prediction on the UK Biobank," 2023 IEEE International Conference on Bioinformatics and Biomedicine (BIBM), Istanbul, Turkiye, 2023, pp. 3804-3810, doi: 10.1109/BIBM58861.2023.10385960.
 
-
-## 🔗 Links
-
-- [UK Biobank](https://www.ukbiobank.ac.uk/)
-- [Stanford Biobank Engine](https://biobankengine.stanford.edu/)
+## 🔗 Relevant Links
+Access the UK Biobank at https://www.ukbiobank.ac.uk and explore phenotypes via the Stanford Biobank Engine at https://biobankengine.stanford.edu.
