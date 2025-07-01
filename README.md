@@ -12,16 +12,18 @@ We explore ensemble-based methods like XGBoost and LightGBM to predict various c
 
 ## 🧬 Data
 
-All phenotypic data used in this study comes from the **UK Biobank**, a large-scale biomedical database and research resource containing in-depth genetic and health information from over 500,000 UK participants aged 40–69. For phenotype selection and preprocessing, we used the publicly available [Stanford Biobank Engine](https://biobankengine.stanford.edu/), which allows for phenotype exploration and trait lookup.
+All phenotypic data used in this study come from the **UK Biobank**, a large-scale biomedical database and research resource containing in-depth genetic and health information from over 500,000 UK participants aged 40–69. For phenotype selection and preprocessing, we used the publicly available [Stanford Biobank Engine](https://biobankengine.stanford.edu/), which allows for phenotype exploration and trait lookup.
 
 Access to the UK Biobank data requires application and approval through [https://www.ukbiobank.ac.uk](https://www.ukbiobank.ac.uk).
 
 ## ⚙️ Methodology
 
-We used tree-based machine learning models including:
+We used tree-based machine learning models, including:
 
 - XGBoost
+- CatBoost
 - LightGBM
+- Decision Trees
 - Random Forest
 
 Each model was trained on genetic, demographic, and lifestyle variables. Evaluation was conducted using standard performance metrics such as AUC (for binary traits) and R² (for continuous traits). SHAP values were used for feature importance interpretation.
@@ -64,15 +66,11 @@ Each model was trained on genetic, demographic, and lifestyle variables. Evaluat
 
 </div>
 
-## 🧠 Interpretability
-
-We used SHAP values to interpret the contribution of individual features (e.g., BMI, age, smoking status, genetic PCs) to the model predictions. This helped to identify both known and novel contributors to phenotype variation.
-
 ## 📝 Citation
-
 If you use this work, please cite:
 
-**Meléndez, A. et al. (2023).** *A Tree-Based Approach to Phenotype Prediction Using the UK Biobank*. IEEE International Conference on Bioinformatics and Biomedicine (BIBM).
+A. Meléndez et al., "Assessing Tree-Based Phenotype Prediction on the UK Biobank," 2023 IEEE International Conference on Bioinformatics and Biomedicine (BIBM), Istanbul, Turkiye, 2023, pp. 3804-3810, doi: 10.1109/BIBM58861.2023.10385960.
+
 
 ## 🔗 Links
 
