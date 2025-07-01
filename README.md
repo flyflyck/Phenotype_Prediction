@@ -1,48 +1,80 @@
 # 🧬 Phenotype Prediction Using Tree-Based Models in the UK Biobank
 
-This repository accompanies the paper:
+## 🚀 Motivation
 
-**"A Tree-Based Approach to Phenotype Prediction Using the UK Biobank"**  
-📍 *Presented at IEEE BIBM 2024*  
-👤 *Author: Alex Melendez (Stanford University)*
+The ability to predict human phenotypes from genomic and environmental data has enormous potential for personalized medicine, risk stratification, and healthcare resource allocation. While genome-wide association studies (GWAS) have identified many relevant variants, integrating those with demographic and behavioral data in powerful machine learning models can significantly improve phenotype prediction. This project aims to benchmark tree-based models on the UK Biobank dataset to evaluate their effectiveness in phenotype prediction and interpretability.
 
----
+## 📚 Overview
 
-## 📌 Overview
+This repository contains code and analysis from our IEEE BIBM 2023 paper:  
+**"A Tree-Based Approach to Phenotype Prediction Using the UK Biobank."**  
+We explore ensemble-based methods like XGBoost and LightGBM to predict various clinical phenotypes and interpret the models using SHAP (SHapley Additive exPlanations) for feature contribution insights.
 
-This project investigates the use of tree-based machine learning models (e.g., XGBoost, LightGBM) for predicting complex phenotypes from genetic, demographic, and behavioral data using the UK Biobank. We emphasize both predictive performance and interpretability using SHAP values to identify impactful features and patient subgroups.
+## 🧬 Data
 
----
+All phenotypic data used in this study comes from the **UK Biobank**, a large-scale biomedical database and research resource containing in-depth genetic and health information from over 500,000 UK participants aged 40–69. For phenotype selection and preprocessing, we used the publicly available [Stanford Biobank Engine](https://biobankengine.stanford.edu/), which allows for phenotype exploration and trait lookup.
 
-## 🎯 Objectives
+Access to the UK Biobank data requires application and approval through [https://www.ukbiobank.ac.uk](https://www.ukbiobank.ac.uk).
 
-- Predict binary, categorical, and continuous phenotypes using ensemble tree models.
-- Evaluate model performance using cross-validation and test sets.
-- Interpret predictions using SHAP values to uncover key features and stratify patient subgroups.
+## ⚙️ Methodology
 
----
+We used tree-based machine learning models including:
 
-## ⚙️ Methods
+- XGBoost
+- LightGBM
+- Random Forest
 
-We trained tree-based models on selected SNPs and covariates. Each model was evaluated using 5-fold cross-validation and tested on held-out data. SHAP values provided local and global model explanations.
+Each model was trained on genetic, demographic, and lifestyle variables. Evaluation was conducted using standard performance metrics such as AUC (for binary traits) and R² (for continuous traits). SHAP values were used for feature importance interpretation.
 
-Target phenotypes included:
+## 📈 Results
 
-- **Type 2 Diabetes (binary)**
-- **Fasting Glucose (continuous)**
-- **Smoking Status (categorical)**
+<div align="center">
 
----
+<table>
+  <thead>
+    <tr>
+      <th>Model</th>
+      <th>Phenotype</th>
+      <th>AUC / R²</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>XGBoost</td>
+      <td>Type 2 Diabetes</td>
+      <td>0.81</td>
+    </tr>
+    <tr>
+      <td>LightGBM</td>
+      <td>Hypertension</td>
+      <td>0.78</td>
+    </tr>
+    <tr>
+      <td>RandomForest</td>
+      <td>Smoking (ever vs never)</td>
+      <td>0.76</td>
+    </tr>
+    <tr>
+      <td>XGBoost</td>
+      <td>Fasting Glucose</td>
+      <td>0.23 (R²)</td>
+    </tr>
+  </tbody>
+</table>
 
-## 📈 Results Summary
+</div>
 
-| Model        | Phenotype             | AUC / R² |
-|--------------|------------------------|----------|
-| XGBoost      | Type 2 Diabetes        | 0.81     |
-| LightGBM     | Hypertension           | 0.78     |
-| RandomForest | Smoking (ever vs never)| 0.76     |
-| XGBoost      | Fasting Glucose        | 0.23 (R²)|
+## 🧠 Interpretability
 
-Top predictors included BMI, age, and known disease-associated SNPs. SHAP plots revealed clinically meaningful patterns consistent with epidemiological literature.
+We used SHAP values to interpret the contribution of individual features (e.g., BMI, age, smoking status, genetic PCs) to the model predictions. This helped to identify both known and novel contributors to phenotype variation.
 
----
+## 📝 Citation
+
+If you use this work, please cite:
+
+**Meléndez, A. et al. (2023).** *A Tree-Based Approach to Phenotype Prediction Using the UK Biobank*. IEEE International Conference on Bioinformatics and Biomedicine (BIBM).
+
+## 🔗 Links
+
+- [UK Biobank](https://www.ukbiobank.ac.uk/)
+- [Stanford Biobank Engine](https://biobankengine.stanford.edu/)
