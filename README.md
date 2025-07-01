@@ -52,8 +52,13 @@ We report results for four representative binary and continuous phenotypes to il
     </tr>
   </tbody>
 </table>
-
 </div>
+
+</table>
+</div>
+<p align="center">
+  <img src="Results/panel_1.png" alt="Results panel 1" width="600"/>
+</p>
 
 ## 📝 Citation
 If you use this work, please cite:
